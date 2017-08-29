@@ -10,15 +10,16 @@ class Calculate {
 
     Calculate() {
         System.out.println("Enter equation please:");
-        history = "";
+        history = ""; // можно присвоить прямо полю, но и так правильно
     }
 
     boolean Input_data(String operation) {
+        // Следует вынести в static final константу, операция Pattern.compile тяжеловесна, а инициализация нужна единожды.
         Pattern p = Pattern.compile("^-?[0-9]+.?[0-9]*\\s?(\\+|-|\\*|/)\\s?-?[0-9]+.?[0-9]*$");
         Matcher m = p.matcher(operation);
 
         if(m.matches()) {
-            history += operation;
+            history += operation; // не будет работать так как строки в java immutable и эта результатом этой операции будет новая строка.
         } else {
             return false;
         }

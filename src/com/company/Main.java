@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // Где-то нужно закрыть ресурс почитай о try with resources
         Calculate calc = new Calculate();
         boolean status = true;
         String input;
